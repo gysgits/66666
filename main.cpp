@@ -2,6 +2,6 @@
 
 int main()
 {
-	std::cout << "第一次迭代！" << std::endl;
+	std::cout << "hello git!" << std::endl;
 	return 0;
 }
