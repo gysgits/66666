@@ -2,6 +2,6 @@
 
 int main()
 {
-	std::cout << "hello git!" << std::endl;
+	std::cout << "hello vs2022!" << std::endl;
 	return 0;
 }
