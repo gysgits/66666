@@ -1,21 +1,34 @@
 #include<iostream>
-
+#include<memory>
 using namespace std;
 
-void fun(int& p, int& q)
+class Test
 {
-	int tmp = p;
-	p = q;
-	q = tmp;
+public:
+	Test();
+	~Test();
+
+private:
+	
+};
+
+Test::Test()
+{
+	cout << "构造函数" << endl;
+}
+Test::~Test()
+{
+	cout << "析构函数" << endl;
 }
 
 int main()
 {
-	int p =1;
-	int q =2;
-	
-	cout << p << ",," << q << endl;
-	fun(p, q);
-	cout << p << ",," << q << endl;
+	Test* test = new Test();
+	unique_ptr<Test> ptr1(test);
+	unique_ptr<Test> ptr2 = std::move(ptr1);
+	cout << test << endl;
+	cout << ptr1 << endl;
+	cout << ptr2 << endl;
+	//ptr = unique_ptr<Test>(new Test);
 
 }
