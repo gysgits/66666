@@ -1,34 +1,15 @@
 #include<iostream>
-#include<memory>
+#include<vector>
+#include<map>
+#include<algorithm>
 using namespace std;
 
-class Test
+bool fun()noexcept
 {
-public:
-	Test();
-	~Test();
-
-private:
-	
-};
-
-Test::Test()
-{
-	cout << "构造函数" << endl;
-}
-Test::~Test()
-{
-	cout << "析构函数" << endl;
+    return false;
 }
 
 int main()
 {
-	Test* test = new Test();
-	unique_ptr<Test> ptr1(test);
-	unique_ptr<Test> ptr2 = std::move(ptr1);
-	cout << test << endl;
-	cout << ptr1 << endl;
-	cout << ptr2 << endl;
-	//ptr = unique_ptr<Test>(new Test);
-
+    cout << noexcept(fun()) << endl;
 }
